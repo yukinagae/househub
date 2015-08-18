@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+        <div class="col-lg-4">
+          <div class="well sidebar-nav">
+            <h3>Sidebar</h3>
+            <form class="form-horizontal" method="GET" action="/properties">
+              <div class="form-group">
+                <div class="dropdown">
+                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    New South Wales
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="#">Western Australia</a></li>
+                    <li><a href="#">Queensland</a></li>
+                    <li><a href="#">Northern Territory</a></li>
+                    <li><a href="#">South Australia</a></li>
+                    <li><a href="#">Victoria</a></li>
+                    <li><a href="#">Tasmania</a></li>
+                    <li><a href="#">Australian Capital Territory</a></li>
+                    <li><a href="#">Jervis Bay Territory</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="city" placeholder="Sydney">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="town" placeholder="CBD">
+              </div>
+            <button type="submit" class="btn btn-primary">
+              <span class="fa fa-search"></span> Search</button>
+            </form>
+          </div>
+        </div>
+
+<h1>Listing Properties</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Population</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @properties.each do |property| %>
+      <tr>
+        <td><%= property.name %></td>
+        <td><%= property.price %></td>
+        <td><%= property.population %></td>
+        <td><%= link_to 'Show', property %></td>
+        <td><%= link_to 'Edit', edit_property_path(property) %></td>
+        <td><%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Property', new_property_path %>
