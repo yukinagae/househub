@@ -8,7 +8,7 @@
   <%= f.input :regist_date, as: :datetime_picker, input_wrapper_html: { class: "col-xs-6" } %>
   <%= error_span(@user[:regist_date]) %>
 
-  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= f.button :submit, :class => 'btn-default' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 users_path, :class => 'btn btn-default' %>
 <% end %>
