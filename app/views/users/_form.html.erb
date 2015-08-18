@@ -1,5 +1,5 @@
 <%= simple_form_for @user, wrapper: "horizontal_form", :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :name , input_wrapper_html: { class: "col-xs-4" } %>
+  <%= f.input :name, input_wrapper_html: { class: "col-xs-4" } %>
   <%= error_span(@user[:name]) %>
   <%= f.input :password, input_wrapper_html: { class: "col-xs-6" } %>
   <%= error_span(@user[:password]) %>

@@ -1,9 +1,9 @@
-<%= simple_form_for @property, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :name %>
+<%= simple_form_for @property, wrapper: "horizontal_form", :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name, input_wrapper_html: { class: "col-xs-4" }  %>
   <%= error_span(@property[:name]) %>
-  <%= f.input :price %>
+  <%= f.input :price, input_wrapper_html: { class: "col-xs-4" }  %>
   <%= error_span(@property[:price]) %>
-  <%= f.input :population %>
+  <%= f.input :population, input_wrapper_html: { class: "col-xs-4" }  %>
   <%= error_span(@property[:population]) %>
 
   <%= f.button :submit, :class => 'btn-default' %>
