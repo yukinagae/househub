@@ -21,6 +21,10 @@ footer {
     padding: 40px 0;
 }
 
+table {
+    background-color: white;
+}
+
 .container {
     max-width: 1080px;
 }
@@ -63,4 +67,22 @@ footer {
 .title {
     font-family: 'Nixie One';
     font-size: 28px;
+}
+
+.carousel-control .fa-chevron-left, .carousel-control .fa-chevron-right {
+    display: inline-block;
+    margin-top: -10px;
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+}
+
+.block {
+    background-color: white;
+    margin: 40px;
+}
+
+.block h2 {
+    padding-top: 10px;
+    padding-bottom: 5px;
 }
