@@ -7,8 +7,12 @@ body {
     font-size: 20px;
 }
 
-h1, h2, label, dt, th {
+h1, h2, h3, h4, p, label, dt, th, span {
     font-family: 'Lateef';
+}
+
+p {
+    font-size: 16px;
 }
 
 ul {
@@ -23,6 +27,10 @@ footer {
 
 table {
     background-color: white;
+}
+
+.header {
+    min-height: 150px;
 }
 
 .container {
@@ -85,4 +93,8 @@ table {
 .block h2 {
     padding-top: 10px;
     padding-bottom: 5px;
+}
+
+.howto {
+    margin: 40px; 
 }
