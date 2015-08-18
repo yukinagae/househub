@@ -4,12 +4,17 @@ html {
 
 body {
     background-color: #f4f2ed;
-    font-size: 16px;
+    font-size: 20px;
+}
+
+h2 {
+    font-family: 'Lateef';
 }
 
 ul {
-    font-size: 16px;
+    font-size: 20px;
     display: inline-block;
+    font-family: 'Lateef';
 }
 
 footer {
@@ -25,7 +30,6 @@ footer {
     text-align: center;
     padding: 20px 0;
     border: 0 none;
-    
 }
 
 .navbar-nav {
@@ -53,5 +57,6 @@ footer {
 }
 
 .title {
-    font-size: 20px;
+    font-family: 'Nixie One';
+    font-size: 28px;
 }

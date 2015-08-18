@@ -53,6 +53,9 @@ gem 'momentjs-rails'
 # DateTimePicker
 gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
 
+# Google Web Font
+gem 'google-webfonts-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
