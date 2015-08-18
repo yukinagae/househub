@@ -38,14 +38,20 @@ footer {
     background-color: #27aa41;
 }
 
-.title {
-    font-size: 20px;
-}
-
 .navbar .container {
     position: relative;
 }
 
 .content {
     text-align: center;
+}
+
+.well {
+    background-color: transparent;
+    border: 0 none;
+    box-shadow: none;
+}
+
+.title {
+    font-size: 20px;
 }
