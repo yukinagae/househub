@@ -1,0 +1,51 @@
+html {
+
+}
+
+body {
+    background-color: #f4f2ed;
+    font-size: 16px;
+}
+
+ul {
+    font-size: 16px;
+    display: inline-block;
+}
+
+footer {
+    padding: 40px 0;
+}
+
+.container {
+    max-width: 1080px;
+}
+
+.navbar {
+    background-color: transparent;
+    text-align: center;
+    padding: 20px 0;
+    border: 0 none;
+    
+}
+
+.navbar-nav {
+    max-width: 450px;
+    float: none;
+    margin: auto;
+}
+
+.btn-primary {
+    background-color: #27aa41;
+}
+
+.title {
+    font-size: 20px;
+}
+
+.navbar .container {
+    position: relative;
+}
+
+.content {
+    text-align: center;
+}
