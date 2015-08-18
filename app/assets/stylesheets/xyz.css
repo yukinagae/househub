@@ -7,7 +7,7 @@ body {
     font-size: 20px;
 }
 
-h1, h2, label, dt {
+h1, h2, label, dt, th {
     font-family: 'Lateef';
 }
 
