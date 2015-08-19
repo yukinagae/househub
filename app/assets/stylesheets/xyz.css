@@ -12,11 +12,11 @@ h1, h2, h3, h4, p, label, dt, th, span {
 }
 
 p {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 ul {
-    font-size: 16px;
+    font-size: 14px;
     display: inline-block;
 }
 
@@ -30,6 +30,10 @@ table {
 
 .header {
     min-height: 150px;
+}
+
+.header h1 {
+    margin-bottom: 40px;
 }
 
 .container {

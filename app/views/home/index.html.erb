@@ -1,9 +1,9 @@
 <div class="header">
     <h1>Properties For You</h1>
     <form class="form-inline" method="GET" action="/properties">
-    <div class="form-group">
-        <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        <div class="form-group">
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle btn-lg" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     New South Wales
                     <span class="caret"></span>
                 </button>
@@ -20,12 +20,22 @@
             </div>
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" id="city" placeholder="Sydney">
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle btn-lg" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                   Sydney Region 
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="#">Hunter, Central & North Coasts</a></li>
+                    <li><a href="#">Illawarra & South Coast</a></li>
+                    <li><a href="#">Regional NSW</a></li>
+                </ul>
+            </div>
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" id="town" placeholder="CBD">
+            <input type="text" class="form-control input-lg" id="town" placeholder="Sydney">
         </div>
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" class="btn btn-primary btn-lg">
             <span class="fa fa-search"></span> Search</button>
     </form>
 </div>
@@ -34,15 +44,15 @@
     <h2>How to use HouseHub?</h2>
     <div class="row">
         <div class="col-sm-4">
-            <h3><i class="fa fa-search"></i> Search</h3>
+            <h2><i class="fa fa-search"></i> Search</h2>
             <p>This is STEP1</p>
         </div>
         <div class="col-sm-4">
-            <h3><i class="fa fa-eye"></i> Compare</h3>
+            <h2><i class="fa fa-eye"></i> Compare</h2>
             <p>This is STEP2</p>
         </div>
         <div class="col-sm-4">
-            <h3><i class="fa fa-thumbs-up"></i> Share</h3>
+            <h2><i class="fa fa-thumbs-up"></i> Share</h2>
             <p>This is STEP3</p>
         </div>
     </div>
