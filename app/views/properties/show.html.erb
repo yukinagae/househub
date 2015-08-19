@@ -10,6 +10,12 @@
   <dd><%= @property.price %></dd>
   <dt><strong><%= model_class.human_attribute_name(:population) %>:</strong></dt>
   <dd><%= @property.population %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:state) %>:</strong></dt>
+  <dd><%= @property.state %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:region) %>:</strong></dt>
+  <dd><%= @property.region %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:town) %>:</strong></dt>
+  <dd><%= @property.town %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
