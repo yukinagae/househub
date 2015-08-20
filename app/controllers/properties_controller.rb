@@ -8,7 +8,19 @@ class PropertiesController < ApplicationController
     @region = params[:region]
     @town = params[:town]
     @kind = params[:kind]
-    @q = Property.search(:state_cont => @state, :region_cont => @region, :town_cont => @town, :kind_cont => @kind)
+    @min_price = params[:min_price]
+    @max_price = params[:max_price]
+    @min_population = params[:min_population]
+    @max_population = params[:max_population]
+    @q = Property.search(:state_cont => @state,
+                         :region_cont => @region,
+                         :town_cont => @town,
+                         :kind_cont => @kind,
+                         :price_gt => @min_price,
+                         :price_lt => @max_price,
+                         :population_gt => @min_population,
+                         :population_lt => @max_population
+                         )
     @properties = @q.result
   end
 
