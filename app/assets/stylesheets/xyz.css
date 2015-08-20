@@ -34,6 +34,7 @@ table {
 
 .header h1 {
     margin-bottom: 40px;
+    min-height: 400px;
 }
 
 .container {
@@ -44,6 +45,7 @@ table {
     background-color: transparent;
     text-align: center;
     padding: 20px 0;
+    margin-bottom: 0px;
     border: 0 none;
 }
 
