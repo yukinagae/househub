@@ -54,41 +54,51 @@
         <div class="form-group">
             <input type="text" class="form-control input-lg" id="town" name="town" placeholder="Sydney">
         </div>
-        <div class="form-group">
-          <select class="form-control" name="min_price">
-            <option value="">Choose Minimum Price</option>
-            <option value="0">0</option>
-            <option value="100">100</option>
-            <option value="200">200</option>
-            <option value="300">300</option>
-          </select>
+        <div class="row">
+          <div class="col-sm-2">
+            <span class="fa fa-usd"></span>
+          </div>
+          <div class="form-group col-sm-5">
+            <select class="form-control" name="min_price">
+              <option value="">Min</option>
+              <option value="0">0</option>
+              <option value="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+            </select>
+          </div>
+          <div class="form-group col-sm-5">
+            <select class="form-control" name="max_price">
+              <option value="">Max</option>
+              <option value="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+              <option value="400">400</option>
+            </select>
+          </div>
         </div>
-        <div class="form-group">
-          <select class="form-control" name="max_price">
-            <option value="">Choose Maximum Price</option>
-            <option value="100">100</option>
-            <option value="200">200</option>
-            <option value="300">300</option>
-            <option value="400">400</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <select class="form-control" name="min_population">
-            <option value="">Choose Minimum Population</option>
-            <option value="0">0</option>
-            <option value="100">100</option>
-            <option value="200">200</option>
-            <option value="300">300</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <select class="form-control" name="max_population">
-            <option value="">Choose Maximum Population</option>
-            <option value="100">100</option>
-            <option value="200">200</option>
-            <option value="300">300</option>
-            <option value="400">400</option>
-          </select>
+        <div class="row">
+          <div class="col-sm-2">
+            <span class="fa fa-user"></span>
+          </div>
+          <div class="form-group col-sm-5">
+            <select class="form-control" name="min_population">
+              <option value="">Min</option>
+              <option value="0">0</option>
+              <option value="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+            </select>
+          </div>
+          <div class="form-group col-sm-5">
+            <select class="form-control" name="max_population">
+              <option value="">Max</option>
+              <option value="100">100</option>
+              <option value="200">200</option>
+              <option value="300">300</option>
+              <option value="400">400</option>
+            </select>
+          </div>
         </div>
         <button type="submit" class="btn btn-primary btn-lg">
             <span class="fa fa-search"></span> Search</button>
