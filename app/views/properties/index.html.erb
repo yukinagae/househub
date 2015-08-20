@@ -160,7 +160,7 @@
         </a>
       </div>
 
-      <table class="table table-bordered">
+      <table class="table">
         <tr>
           <th><span class="fa fa-usd"></span> <%= property.price %></th>
         </tr>
@@ -186,20 +186,24 @@
                     <div>
                       <table class="table table-bordered">
                         <tr>
-                          <th>Location</th>
+                          <td><span class="fa fa-globe"></span> Location</td>
                           <td><%= property.state %> <%= property.region %> <%= property.town %></td>
                         </tr>
                         <tr>
-                          <th>Price</th>
+                          <td><span class="fa fa-usd"></span> Price</td>
                           <td><%= property.price %></td>
                         </tr>
                         <tr>
-                          <th>Population</th>
+                          <td><span class="fa fa-user"></span> Population</td>
                           <td><%= property.population %></td>
                         </tr>
                         <tr>
-                          <th>Type of Unit</th>
+                          <td><span class="fa fa-home"></span> Type of Unit</td>
                           <td><%= property.kind %></td>
+                        </tr>
+                        <tr>
+                          <td><span class="fa fa-sun-o"></span> Position</td>
+                          <td><%= property.position %></td>
                         </tr>
                       </table>
                     </div>
@@ -227,6 +231,7 @@
       <th><%= model_class.human_attribute_name(:region) %></th>
       <th><%= model_class.human_attribute_name(:town) %></th>
       <th><%= model_class.human_attribute_name(:kind) %></th>
+      <th><%= model_class.human_attribute_name(:position) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -243,6 +248,7 @@
         <td><%= property.region %></td>
         <td><%= property.town %></td>
         <td><%= property.kind %></td>
+        <td><%= property.position %></td>
         <td><%= property.description %></td>
         <td><%=l property.created_at %></td>
         <td>

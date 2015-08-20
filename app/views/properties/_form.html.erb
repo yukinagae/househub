@@ -13,6 +13,8 @@
   <%= error_span(@property[:town]) %>
   <%= f.input :kind, input_wrapper_html: { class: "col-xs-4" }  %>
   <%= error_span(@property[:kind]) %>
+  <%= f.input :position, input_wrapper_html: { class: "col-xs-4" }  %>
+  <%= error_span(@property[:position]) %>
   <%= f.input :description, as: :text, input_wrapper_html: { class: "col-xs-4" }  %>
   <%= error_span(@property[:description]) %>
 
