@@ -175,7 +175,7 @@
                       <%= image_tag("photo0000-1035.jpg", :size => "512x384") %>
                     </div>
                     <div class="block">
-                      <p>This is description</P>
+                      <p><%= property.description %></P>
                     </div>
                     <div>
                       <table class="table table-bordered">
@@ -223,6 +223,7 @@
       <th><%= model_class.human_attribute_name(:region) %></th>
       <th><%= model_class.human_attribute_name(:town) %></th>
       <th><%= model_class.human_attribute_name(:kind) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -238,6 +239,7 @@
         <td><%= property.region %></td>
         <td><%= property.town %></td>
         <td><%= property.kind %></td>
+        <td><%= property.description %></td>
         <td><%=l property.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
