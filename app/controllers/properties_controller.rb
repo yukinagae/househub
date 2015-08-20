@@ -4,7 +4,11 @@ class PropertiesController < ApplicationController
   # GET /properties
   # GET /properties.json
   def index
-    @properties = Property.all
+    @state = params[:state]
+    @region = params[:region]
+    @town = params[:town]
+    @q = Property.search(:state_cont => @state, :region_cont => @region, :town_cont => @town)
+    @properties = @q.result
   end
 
   # GET /properties/1

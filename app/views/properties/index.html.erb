@@ -1,37 +1,51 @@
 <%- model_class = Property -%>
 
-        <div class="col-lg-4">
-          <div class="well sidebar-nav">
-            <form class="form-horizontal" method="GET" action="/properties">
-              <div class="form-group">
-                <div class="dropdown">
-                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    New South Wales
+<div class="col-lg-4">
+  <div class="well sidebar-nav">
+    <form class="form-horizontal" method="GET" action="/properties">
+        <div class="form-group">
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle btn-lg" type="button" id="state" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Choose State...
                     <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a href="#">Western Australia</a></li>
-                    <li><a href="#">Queensland</a></li>
-                    <li><a href="#">Northern Territory</a></li>
-                    <li><a href="#">South Australia</a></li>
-                    <li><a href="#">Victoria</a></li>
-                    <li><a href="#">Tasmania</a></li>
-                    <li><a href="#">Australian Capital Territory</a></li>
-                    <li><a href="#">Jervis Bay Territory</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" id="city" placeholder="Sydney">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" id="town" placeholder="CBD">
-              </div>
-            <button type="submit" class="btn btn-primary">
-              <span class="fa fa-search"></span> Search</button>
-            </form>
-          </div>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="state">
+                    <li><a href="#" data-value="nsw">New South Wales</a></li>
+                    <li><a href="#" data-value="wa">Western Australia</a></li>
+                    <li><a href="#" data-value="ql">Queensland</a></li>
+                    <li><a href="#" data-value="nt">Northern Territory</a></li>
+                    <li><a href="#" data-value="sa">South Australia</a></li>
+                    <li><a href="#" data-value="v">Victoria</a></li>
+                    <li><a href="#" data-value="t">Tasmania</a></li>
+                    <li><a href="#" data-value="act">Australian Capital Territory</a></li>
+                    <li><a href="#" data-value="jbt">Jervis Bay Territory</a></li>
+                </ul>
+                <input type="hidden" name="state" value="">
+            </div>
         </div>
+        <div class="form-group">
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle btn-lg" type="button" id="town" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                   Choose Region...
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="town">
+                    <li><a href="#" data-value="sr">Sydney Region </a></li>
+                    <li><a href="#" data-value="hcnc">Hunter, Central & North Coasts</a></li>
+                    <li><a href="#" data-value="isc">Illawarra & South Coast</a></li>
+                    <li><a href="#" data-value="rnsw">Regional NSW</a></li>
+                </ul>
+                <input type="hidden" name="region" value="">
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control input-lg" id="town" name="town" placeholder="Sydney">
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg">
+            <span class="fa fa-search"></span> Search</button>
+    </form>
+  </div>
+</div>
 
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
