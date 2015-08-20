@@ -11,6 +11,8 @@
   <%= error_span(@property[:region]) %>
   <%= f.input :town, input_wrapper_html: { class: "col-xs-4" }  %>
   <%= error_span(@property[:town]) %>
+  <%= f.input :kind, input_wrapper_html: { class: "col-xs-4" }  %>
+  <%= error_span(@property[:kind]) %>
 
   <%= f.button :submit, :class => 'btn-default' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

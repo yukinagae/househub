@@ -16,6 +16,8 @@
   <dd><%= @property.region %></dd>
   <dt><strong><%= model_class.human_attribute_name(:town) %>:</strong></dt>
   <dd><%= @property.town %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:kind) %>:</strong></dt>
+  <dd><%= @property.kind %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
