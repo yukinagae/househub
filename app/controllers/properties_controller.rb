@@ -7,7 +7,8 @@ class PropertiesController < ApplicationController
     @state = params[:state]
     @region = params[:region]
     @town = params[:town]
-    @q = Property.search(:state_cont => @state, :region_cont => @region, :town_cont => @town)
+    @kind = params[:kind]
+    @q = Property.search(:state_cont => @state, :region_cont => @region, :town_cont => @town, :kind_cont => @kind)
     @properties = @q.result
   end
 
