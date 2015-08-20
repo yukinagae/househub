@@ -1,0 +1,43 @@
+<%- model_class = Property -%>
+
+<div class="page-header">
+  <h1>Compare Properties</h1>
+</div>
+
+<div class="col-sm-8 col-sm-offset-2">
+        <table class="table compare">
+            <tr>
+                <th class="col-sm-3"></th>
+                <th style="text-align: center;"><%= @properties[0].name %></th>
+                <th style="text-align: center;"><%= @properties[1].name %></th>
+            </tr>
+            <tr>
+                <th><span class="fa fa-globe"></span> Location</th>
+                <td><%= image_tag("photo0000-1035.jpg", :size => "256x192") %>
+                    <%= @properties[0].state %> <%= @properties[0].region %> <%= @properties[0].town %></td>
+                <td><%= image_tag("photo0000-1035.jpg", :size => "256x192") %>
+                    <%= @properties[1].state %> <%= @properties[1].region %> <%= @properties[1].town %></td>
+            </tr>
+            <tr>
+                <th><span class="fa fa-usd"></span> Price</th>
+                <td><%= @properties[0].price %></td>
+                <td><%= @properties[1].price %></td>
+            </tr>
+            <tr>
+                <th><span class="fa fa-user"></span> Population</th>
+                <td><%= @properties[0].population %></td>
+                <td><%= @properties[1].population %></td>
+            </tr>
+            <tr>
+                <th><span class="fa fa-home"></span> Unit Type</th>
+                <td><%= @properties[0].kind %></td>
+                <td><%= @properties[1].kind %></td>
+            </tr>
+            <tr>
+                <th><span class="fa fa-comment"></span> Description</th>
+                <td><%= @properties[0].description %></td>
+                <td><%= @properties[1].description %></td>
+            </tr>
+
+        </table>
+</div>

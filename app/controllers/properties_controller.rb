@@ -38,6 +38,15 @@ class PropertiesController < ApplicationController
   def edit
   end
 
+  # GET /properties/compare?x1=1&x2=2
+  def compare
+    @x1 = params[:x1].to_i
+    @x2 = params[:x2].to_i
+    @ids = [@x1, @x2]
+    @q = Property.search(:id_in => @ids)
+    @properties = @q.result
+  end
+
   # POST /properties
   # POST /properties.json
   def create

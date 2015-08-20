@@ -101,3 +101,7 @@ table {
 .howto {
     margin: 40px; 
 }
+
+.compare {
+    background-color: transparent;
+}
