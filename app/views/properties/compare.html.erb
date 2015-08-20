@@ -8,7 +8,7 @@
 <script src="https://code.highcharts.com/highcharts-more.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
-<div id="container" style="min-width: 400px; max-width: 750px; height: 600px; margin: 0 auto; background-color: transparent;"></div>
+<div id="container" style="min-width: 400px; max-width: 750px; height: 500px; margin: 0 auto; background-color: transparent;"></div>
 
 <div class="col-sm-8 col-sm-offset-2">
         <table class="table compare">
@@ -49,9 +49,19 @@
 </div>
 
 <script type="text/javascript">
+
 $(function () {
 
-    $('#container').highcharts({
+    var current = window.location.href;
+    var urls = current.split("?");
+
+    $.ajax({
+        type: "GET",
+        url: urls[0] + ".json?" + urls[1],
+        dataType: "json",
+        success: function(data){
+
+        $('#container').highcharts({
 
         chart: {
             polar: true,
@@ -60,7 +70,7 @@ $(function () {
         },
 
         title: {
-            text: 'Budget vs spending',
+            text: data[0].name + '  vs  ' + data[1].name,
             x: -80
         },
 
@@ -69,8 +79,7 @@ $(function () {
         },
 
         xAxis: {
-            categories: ['Sales', 'Marketing', 'Development', 'Customer Support',
-                    'Information Technology', 'Administration'],
+            categories: ['Price', 'Population', 'Convenience'],
             tickmarkPlacement: 'on',
             lineWidth: 0
         },
@@ -94,15 +103,20 @@ $(function () {
         },
 
         series: [{
-            name: 'Allocated Budget',
-            data: [43000, 19000, 60000, 35000, 17000, 10000],
+            name: data[0].name,
+            data: [data[0].price, data[0].population, 500],
             pointPlacement: 'on'
         }, {
-            name: 'Actual Spending',
-            data: [50000, 39000, 42000, 31000, 26000, 14000],
+            name: data[1].name,
+            data: [data[1].price, data[1].population, 300],
             pointPlacement: 'on'
         }]
 
     });
+
+        }
+    });
+
+
 });
 </script>
