@@ -1,5 +1,12 @@
 <%- model_class = Property -%>
 
+<script type="text/javascript">
+        function modal_show(id) {
+          var modalId = '#myModal' + id;
+          $("button[data-target='" + modalId + "'"+ "]").click();
+        }
+</script>
+
 <div class="col-lg-4">
   <div class="well sidebar-nav">
     <form class="form-horizontal" method="GET" action="/properties">
@@ -127,7 +134,7 @@
         </ol>
 
         <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
+        <div class="carousel-inner" role="listbox" onclick="javascript:modal_show(<%= property.id %>);">
           <div class="item active">
             <%= image_tag("photo0000-1035.jpg") %>
             <div class="carousel-caption">
@@ -160,15 +167,14 @@
         <tr>
           <th><span class="fa fa-user"></span> <%= property.population %> people</th>
         </tr>
-        <tr>
-          <th>
-            <button type="button" class="btn btn-detault btn-lg" data-toggle="modal" data-target="#myModal">See Details</button>
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      </table>
+            <button style="display: none;" type="button" class="btn btn-detault btn-lg" data-toggle="modal" data-target="#myModal<%= property.id %>">See Details</button>
+            <div class="modal fade" id="myModal<%= property.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel<%= property.id %>">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h2 class="modal-title" id="myModalLabel"><%= property.name %></h2>
+                    <h2 class="modal-title" id="myModalLabel<%= property.id %>"><%= property.name %></h2>
                   </div>
                   <div class="modal-body">
                     <div class="block">
@@ -204,8 +210,6 @@
                 </div>
               </div>
             </div>
-          </th>
-        </tr>
       </table>
 
     </div>
