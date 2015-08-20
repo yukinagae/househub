@@ -8,39 +8,39 @@
 <script src="http://code.highcharts.com/highcharts-more.js"></script>
 <script src="http://code.highcharts.com/modules/exporting.js"></script>
 
-<div id="container" style="min-width: 400px; max-width: 600px; height: 400px; margin: 0 auto"></div>
+<div id="container" style="min-width: 400px; max-width: 750px; height: 600px; margin: 0 auto; background-color: transparent;"></div>
 
 <div class="col-sm-8 col-sm-offset-2">
         <table class="table compare">
             <tr>
-                <th class="col-sm-3"></th>
-                <th style="text-align: center;"><%= @properties[0].name %></th>
-                <th style="text-align: center;"><%= @properties[1].name %></th>
+                <td class="col-sm-3"></td>
+                <td style="text-align: center;"><%= @properties[0].name %></td>
+                <td style="text-align: center;"><%= @properties[1].name %></td>
             </tr>
             <tr>
-                <th><span class="fa fa-globe"></span> Location</th>
+                <td><span class="fa fa-globe"></span> Location</td>
                 <td><%= image_tag("photo0000-1035.jpg", :size => "256x192") %>
                     <%= @properties[0].state %> <%= @properties[0].region %> <%= @properties[0].town %></td>
                 <td><%= image_tag("photo0000-1035.jpg", :size => "256x192") %>
                     <%= @properties[1].state %> <%= @properties[1].region %> <%= @properties[1].town %></td>
             </tr>
             <tr>
-                <th><span class="fa fa-usd"></span> Price</th>
+                <td><span class="fa fa-usd"></span> Price</td>
                 <td><%= @properties[0].price %></td>
                 <td><%= @properties[1].price %></td>
             </tr>
             <tr>
-                <th><span class="fa fa-user"></span> Population</th>
+                <td><span class="fa fa-user"></span> Population</td>
                 <td><%= @properties[0].population %></td>
                 <td><%= @properties[1].population %></td>
             </tr>
             <tr>
-                <th><span class="fa fa-home"></span> Unit Type</th>
+                <td><span class="fa fa-home"></span> Unit Type</td>
                 <td><%= @properties[0].kind %></td>
                 <td><%= @properties[1].kind %></td>
             </tr>
             <tr>
-                <th><span class="fa fa-comment"></span> Description</th>
+                <td><span class="fa fa-comment"></span> Description</td>
                 <td><%= @properties[0].description %></td>
                 <td><%= @properties[1].description %></td>
             </tr>
@@ -55,7 +55,8 @@ $(function () {
 
         chart: {
             polar: true,
-            type: 'line'
+            type: 'line',
+            backgroundColor: '#f4f2ed'
         },
 
         title: {
