@@ -291,6 +291,21 @@
 
 <script type="text/javascript">
 
+  $("input[type='checkbox']").change(function(){
+    if($(this).is(":checked")){
+        $(this).parent().addClass("selectedProperty");
+        $(this).parent().parent().addClass("selectedProperty");
+        $(this).parent().parent().children().addClass("selectedProperty");
+    } else{
+        $(this).parent().removeClass("selectedProperty");
+        $(this).parent().parent().removeClass("selectedProperty");
+        $(this).parent().parent().children().removeClass("selectedProperty");
+    }
+  });
+</script>
+
+<script type="text/javascript">
+
 $(function () {
     $(document).ready(function () {
         Highcharts.setOptions({

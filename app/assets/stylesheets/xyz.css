@@ -107,3 +107,7 @@ table {
 .compare {
     background-color: transparent;
 }
+
+.selectedProperty {
+    background-color: #f0ad4e;
+}
