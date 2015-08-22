@@ -1,5 +1,9 @@
 <%- model_class = Property -%>
 
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
 <script type="text/javascript">
         function modal_show(id) {
           var modalId = '#myModal' + id;
@@ -110,29 +114,30 @@
         <button type="submit" class="btn btn-primary btn-lg">
             <span class="fa fa-search"></span> Search</button>
     </form>
-    <form class="form-horizontal" method="GET" action="/properties/compare" style="margin-top: 10px;">
-        <button type="submit" class="btn btn-warning btn-lg">
-            <span class="fa fa-eye"></span> Compare</button>
-            <input type="hidden" id="x1" name="x1" value="1" />
-            <input type="hidden" id="x2" name="x2" value="2" />
-    </form>
   </div>
 </div>
 
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
+
+    <form class="form-horizontal" method="GET" action="/properties/compare" style="margin-top: 10px;">
+        <button type="submit" class="btn btn-warning btn-lg">
+            <span class="fa fa-eye"></span> Compare</button>
+            <input type="hidden" id="x1" name="x1" value="1" />
+            <input type="hidden" id="x2" name="x2" value="2" />
+    </form>
+
 <div class="col-lg-8">
 
   <% @properties.each do |property| %>
 
+
     <div class="block">
 
-      <div class="input-group">
-      <span class="input-group-addon">
-        <input type="checkbox" aria-label="...">
-      </span>
-    </div>
+        <span class="input-group-addon">
+          <input type="checkbox" aria-label="...">
+        </span>
 
       <h2><%= property.name %></h2>
 
@@ -195,6 +200,7 @@
                     <div class="block">
                       <p><%= property.description %></P>
                     </div>
+                    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
                     <div>
                       <table class="table table-bordered">
                         <tr>
@@ -283,3 +289,86 @@
             new_property_path,
             :class => 'btn btn-default' %>
 -->
+
+<script type="text/javascript">
+
+$(function () {
+    $(document).ready(function () {
+        Highcharts.setOptions({
+            global: {
+                useUTC: false
+            }
+        });
+
+        $('#container').highcharts({
+            chart: {
+                type: 'spline',
+                animation: Highcharts.svg, // don't animate in old IE
+                marginRight: 10,
+                events: {
+                    load: function () {
+
+                      var r = 10;
+
+                        // set up the updating of the chart each second
+                        var series = this.series[0];
+                        setInterval(function () {
+                            r = r + Math.floor( Math.random() * 3 );
+                            var x = (new Date()).getTime(), // current time
+                                y = r;
+                            series.addPoint([x, y], true, true);
+                        }, 1000);
+                    }
+                }
+            },
+            title: {
+                text: 'Number of visitors to this property'
+            },
+            xAxis: {
+                type: 'datetime',
+                tickPixelInterval: 150
+            },
+            yAxis: {
+                title: {
+                    text: 'Visitors'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.series.name + '</b><br/>' +
+                        Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) + '<br/>' +
+                        Highcharts.numberFormat(this.y, 2);
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            exporting: {
+                enabled: false
+            },
+            series: [{
+                name: 'Data',
+                data: (function () {
+                    var data = [],
+                        time = (new Date()).getTime(),
+                        i;
+
+                    for (i = -19; i <= 0; i += 1) {
+                        data.push({
+                            x: time + i * 1000,
+                            y: 0
+                        });
+                    }
+                    return data;
+                }())
+            }]
+        });
+    });
+});
+
+</script>
