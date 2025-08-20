@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.3'
+gem 'rails', '7.1.5.2'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', groups: %w(test development), require: false # development
@@ -43,7 +43,7 @@ gem 'therubyracer'
 gem 'execjs'
 
 # bootstrap framework by twitter
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails', '>= 3.2.2'
 
 # simple form
 gem 'simple_form'
@@ -57,7 +57,7 @@ gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: '
 gem 'google-webfonts-rails'
 
 # Search
-gem 'ransack'
+gem 'ransack', '>= 1.7.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
